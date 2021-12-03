@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +13,115 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.finance-card {
+  width: 85%;
+  background-color: white;
+  margin: 5px;
+  padding: 3%;
+  border-radius: 10px;
+  color: darkslategrey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.finance-card:hover {
+  background-color: lavender;
+}
+
+.finance-name {
+  text-align: left;
+  border-bottom: darkslategrey solid 1px;
+}
+
+.finance-value {
+  margin: 5%;
+}
+
+.finance-card-footer {
+  display: flex;
+}
+
+.finance-max {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: left;
+  font-size: 65%;
+  color: slategrey;
+  white-space: nowrap;
+}
+
+.action-icons {
+  display: flex;
+  font-size: 1.5em;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.icon {
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 5%;
+}
+
+.modal-background {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+}
+
+.modal {
+  background-color: white;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  bottom: 50%;
+  right: 10%;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.close {
+  height: 10%;
+  color: Black;
+  float: right;
+  margin-right: 10px;
+}
+
+.modal-content {
+  color: darkslategrey;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spend-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-text {
+  text-align: center;
+  height: 30px;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.input-submit {
+  width: 100%;
+  text-align: center;
+  height: 30px;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  background: darkviolet;
+  color: floralwhite;
+  font-weight: bold;
 }
