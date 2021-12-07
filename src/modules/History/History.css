@@ -1,0 +1,16 @@
+.history-tiles {
+  padding-top: 21px;
+}
+
+.history-tile {
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  margin: -1px 20px 0px 20px;
+  padding: 15px;
+}
+
+.history-spend {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
