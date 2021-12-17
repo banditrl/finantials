@@ -19,7 +19,8 @@ function History() {
   }, [db]);
 
   const historyTiles = () => {
-    const sortedHistory = history.sort((a, b) => new Date(b.date) - new Date(a.date));
+    debugger;
+    const sortedHistory = history.sort((a, b) => b.date - a.date);
     return sortedHistory.map((item, index) => {
       return (
         <div className='history-tile' key={`${index}${item.name}.history`}>

@@ -54,8 +54,8 @@ function Finances() {
       <div className='finance-card card-top-margin'>
         <div className='finance-name'>Totals</div>
         <div className='finance-card-total'>
-          <div className='finance-max'>{`Total remaining: R$ ${totalValue}`}</div>
-          <div className='finance-max'>{`Total configured: R$ ${totalMaxValue}`}</div>
+          <div className='finance-max'>{`Total remaining: R$ ${totalValue.toFixed(2)}`}</div>
+          <div className='finance-max'>{`Total configured: R$ ${totalMaxValue.toFixed(2)}`}</div>
         </div>
       </div>
     );
@@ -67,7 +67,7 @@ function Finances() {
         <div className='finance-card' key={`${index}${finance.name}.finance`}>
           <div className='finance-name'>{finance.name}</div>
           <div className='finance-value'>
-            <div>{`Available: R$ ${finance.value}`}</div>
+            <div>{`Available: R$ ${finance.value.toFixed(2)}`}</div>
             <div>{`Spent: R$ ${(finance.maxValue - finance.value).toFixed(2)}`}</div>
           </div>
           <div className='finance-card-footer'>
