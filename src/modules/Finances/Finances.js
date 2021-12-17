@@ -45,8 +45,7 @@ function Finances() {
         value: valueToSpend,
         date: Timestamp.fromDate(new Date())
       })
-      .then(() => window.alert('Value successfully spent'))
-      .catch(() => window.alert('Error spending value'));
+      .then(() => window.alert('Value successfully spent'));
     })
     .catch(() => window.alert('Error spending value'));
   }
