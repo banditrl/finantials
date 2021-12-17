@@ -1,6 +1,6 @@
 import './Finances.css';
 import React, { useState, useEffect } from 'react';
-import { getFirestore, collection, getDocs, updateDoc, addDoc, Timestamp } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, updateDoc, addDoc, Timestamp } from 'firebase/firestore';
 import { AiOutlineShopping, AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 
 function Finances() {
@@ -10,7 +10,7 @@ function Finances() {
   const [finances, setFinances] = useState([]);
   const [selectedFinance, setSelectedFinance] = useState({});
   const [showPopup, setShowPopup] = useState(false);
-  const [valueToSpend, setValueToSpend] = useState(0);
+  const [valueToSpend, setValueToSpend] = useState('');
 
   useEffect(() => {
     const fetchFinances = async () => {
@@ -36,15 +36,19 @@ function Finances() {
   const spend = () => {
     const newValue = selectedFinance.value - valueToSpend;
 
-    addDoc(collection(db, 'history'), {
-      name: selectedFinance.name,
-      value: valueToSpend,
-      date: Timestamp.fromDate(new Date())
-    });
-
     updateDoc(selectedFinance.ref, {
       value: newValue
-    });
+    })
+    .then(() => {
+      addDoc(collection(db, 'history'), {
+        name: selectedFinance.name,
+        value: valueToSpend,
+        date: Timestamp.fromDate(new Date())
+      })
+      .then(() => window.alert('Value successfully spent'))
+      .catch(() => window.alert('Error spending value'));
+    })
+    .catch(() => window.alert('Error spending value'));
   }
 
   const totalCard = () => {
